@@ -4,7 +4,7 @@ javac Assignment1.java\
 java Assignment1
 
 ### Important Note!
-Please note that problem 2 runs infinitely. I wrote it this way because the question prompt says to allow guests to view the vase as many times as they want. Therefore this program will run until interrupted.
+Please note that problem 2 runs infinitely. I wrote it this way because the question prompt says to allow guests to view the vase as many times as they want. Therefore this program will run until interrupted. It will print which guest is currently viewing the vase. I have included a sample output file for both problems.
 
 ## Problem 1
 In this program, each guest is a thread, and the main thread represents the Minotaur. The Semaphore class is used to signal each guest thread to enter the labyrinth. The counter variable is a shared counter to keep track of cupcakes eaten.
