@@ -3,7 +3,7 @@ import java.util.concurrent.Semaphore;
 public class MinotaurParty {
     private final int numGuests;
     private final Semaphore[] semaphores;
-    private int counter;
+    public static int counter;
 
     public MinotaurParty(int numGuests) {
         this.numGuests = numGuests;
@@ -11,7 +11,7 @@ public class MinotaurParty {
         for (int i = 0; i < numGuests; i++) {
             semaphores[i] = new Semaphore(0);
         }
-        this.counter = 0;
+        counter = 0;
     }
 
     public void startParty() {
@@ -23,6 +23,7 @@ public class MinotaurParty {
 
     private void guestTask(int guestID) {
         boolean hasEntered = false;
+        boolean firstEntry = true;
         while (true) {
             try {
                 // Wait for signal from the Minotaur to enter the labyrinth
@@ -33,17 +34,20 @@ public class MinotaurParty {
                     System.out.println("Guest " + guestID + " enters the labyrinth.");
                     hasEntered = true;
                 }
-                if (Math.random() < 0.5) {
+                if (Math.random() < 0.5 || firstEntry) {
                     System.out.println("Guest " + guestID + " finds a cupcake and eats it.");
                     synchronized (this) {
                         counter++;
                     }
+                    firstEntry = false;
                 } else {
                     System.out.println("Guest " + guestID + " finds an empty plate.");
                 }
 
                 // If all guests have entered the labyrinth at least once, inform the main
                 // thread
+                System.out.println(counter);
+                System.out.println(numGuests);
                 if (counter == numGuests) {
                     synchronized (this) {
                         notify();
