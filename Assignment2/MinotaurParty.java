@@ -46,8 +46,6 @@ public class MinotaurParty {
 
                 // If all guests have entered the labyrinth at least once, inform the main
                 // thread
-                System.out.println(counter);
-                System.out.println(numGuests);
                 if (counter == numGuests) {
                     synchronized (this) {
                         notify();

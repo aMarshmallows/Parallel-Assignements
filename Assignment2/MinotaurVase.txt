@@ -1,0 +1,11 @@
+Guest 3 enters the labyrinth.
+Guest 1 enters the labyrinth.
+Guest 4 enters the labyrinth.
+Guest 2 enters the labyrinth.
+Guest 0 enters the labyrinth.
+Guest 2 finds a cupcake and eats it.
+Guest 0 finds a cupcake and eats it.
+Guest 4 finds a cupcake and eats it.
+Guest 1 finds a cupcake and eats it.
+Guest 3 finds a cupcake and eats it.
+All guests have entered the labyrinth at least once. Party success!
